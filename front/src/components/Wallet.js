@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
-import { Account, chainid } from '../store/Atom';
+import { Account, buyerAccount, chainid } from '../store/Atom';
 import { InjectedConnector } from '@web3-react/injected-connector';
 import { useWeb3React } from '@web3-react/core';
 import '../styles/Wallet.css'
 
 const injected = new InjectedConnector();
 const Wallet = () => {
+    // const [Active, setActive] = useState(true);
     const setAccount = useSetRecoilState(Account);
+    const setbuyerAccount = useSetRecoilState(buyerAccount);
     const setChainid = useSetRecoilState(chainid);
     const navigateToOrder = useNavigate(null);
     const navigateToMinting = useNavigate(null);
@@ -22,6 +24,7 @@ const Wallet = () => {
     } = useWeb3React();
 
     const handleConnect = () => {
+        // setActive(!Active);
 
         if (active) {
 
@@ -42,7 +45,7 @@ const Wallet = () => {
     }
 
     const toMarketPlace = () => {
-        setAccount(account);
+        setbuyerAccount(account);
         setChainid(chainId);
         navigateToOrder('/order')
     }

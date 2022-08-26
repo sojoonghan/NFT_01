@@ -1,12 +1,13 @@
 import React from 'react'
 import axios from 'axios'
 import { useRecoilValue } from 'recoil';
-import { chainid, Account, img, nft, name, title, descript, price } from '../store/Atom';
+import { chainid, Account, buyerAccount, img, nft, name, title, descript, price } from '../store/Atom';
 import '../styles/Artist.css'
 
 const Order = () => {
 
     const ACCOUNT = useRecoilValue(Account);
+    const buyerACCOUNT = useRecoilValue(buyerAccount);
     const CHAINID = useRecoilValue(chainid);
     const IMG = useRecoilValue(img);
     const TOKENURI = useRecoilValue(nft);
@@ -17,6 +18,7 @@ const Order = () => {
 
     const NftInfo = {
         account: ACCOUNT,
+        buyeraccount: buyerACCOUNT,
         chainid: CHAINID,
         tokenURI: TOKENURI,
         price: PRICE
@@ -53,8 +55,11 @@ const Order = () => {
                 </section>
                 <section>
                     <form onSubmit={onOder} className='minting2-container'>
-                        <div><label htmlFor='account'>Account:</label>
+                        <div><label htmlFor='account'>판매자 지갑주소:</label>
                             <input id='account' type="text" value={ACCOUNT} className="minting2-input" />
+                        </div>
+                        <div><label htmlFor='buyerAccount'>구매자 지갑주소:</label>
+                            <input id='buyerAccount' type="text" value={buyerACCOUNT} className="minting2-input" />
                         </div>
                         <div><label htmlFor="chain" >ChainID:</label>
                             <input id="chain" type="text" className="minting2-input" value={CHAINID} />

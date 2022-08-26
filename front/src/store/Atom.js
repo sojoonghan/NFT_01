@@ -21,7 +21,10 @@ const Account = atom({
     key: "Account",
     default: "",
 })
-
+const buyerAccount = atom({
+    key: "buyerAccount",
+    default: "",
+})
 const chainid = atom({
     key: "chacinid",
     default: "",
@@ -43,4 +46,4 @@ const price = atom({
     key: "price",
     default: {},
 })
-export { linkChange, minting, nft, img, Account, chainid, name, title, descript, price }
+export { linkChange, minting, nft, img, Account, buyerAccount, chainid, name, title, descript, price }
