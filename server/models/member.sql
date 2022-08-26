@@ -1,0 +1,8 @@
+-- DATABASE nft
+CREATE TABLE users(
+id CHAR(40) ,
+name CHAR(20) NOT NULL,
+email CHAR(60) NOT NULL,
+pw CHAR(40) NOT NULL,
+PRIMARY KEY(email)
+)CHARSET=utf8;

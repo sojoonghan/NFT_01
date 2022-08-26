@@ -1,0 +1,46 @@
+.wallet-title {
+  padding: 100px 180px;
+  font-size: 60px;
+}
+.wallet-con {
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-con-item {
+  list-style: none;
+  padding: 50px 50px;
+  font-size: 40px;
+}
+
+.wallet-con-btn {
+  background-color: rgb(224, 214, 21);
+  color: rgb(66, 14, 210);
+  font-weight: 700;
+  width: 60%;
+  border-radius: 40px;
+  height: 48px;
+  margin-top: 10px;
+  align-self: center;
+}
+.wallet-con-btn-1 {
+  background-color: rgb(20, 204, 149);
+  color: rgb(27, 2, 2);
+  font-weight: 700;
+  width: 60%;
+  border-radius: 40px;
+  height: 48px;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.wallet-con-btn-2 {
+  background-color: rgb(14, 96, 154);
+  color: rgb(215, 228, 227);
+  font-weight: 700;
+  width: 60%;
+  border-radius: 40px;
+  height: 48px;
+  margin-top: 10px;
+  align-self: center;
+}

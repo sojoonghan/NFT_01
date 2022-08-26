@@ -1,0 +1,15 @@
+{
+  "description": "descript",
+  "image": "ipfs://+ cid",
+  "name": "name",
+  "attributes": [
+    {
+      "trait_type": "",
+      "value": ""
+    },
+    {
+      "trait_type": "",
+      "value": ""
+    }
+  ]
+}
