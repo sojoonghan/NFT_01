@@ -46,4 +46,9 @@ const price = atom({
     key: "price",
     default: {},
 })
-export { linkChange, minting, nft, img, Account, buyerAccount, chainid, name, title, descript, price }
+
+const newID = atom({
+    key: "newID",
+    default: {},
+})
+export { linkChange, minting, nft, img, Account, buyerAccount, chainid, name, title, descript, price, newID }

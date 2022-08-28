@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "truffle compile",
-    "deploy": "truffle deploy --network dev"
+    "deploy": "truffle migrate --network dev"
   },
   "author": "",
   "license": "ISC",

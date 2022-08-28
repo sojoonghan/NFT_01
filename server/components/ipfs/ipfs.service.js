@@ -13,7 +13,6 @@ const ipfsPost = async (req, res) => {
 
     console.log(imgFile);
     console.log(imgPath);
-    console.log("이미지 파일")
     console.log(result);
 
     const cid = `${imgFile.cid}`;

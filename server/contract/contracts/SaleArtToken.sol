@@ -7,30 +7,32 @@ import "./MintNFT.sol";
 contract SaleArtToken {
     MintNFT public mintArtTokenAddress;
 
-    constructor(address _mintArtTokenAddress) {
-        mintArtTokenAddress = MintNFT(_mintArtTokenAddress);
-    }
+    constructor() {}
 
     mapping(uint256 => uint256) public artTokenPrices;
     uint256[] public onSaleArtTokenArray;
 
-    function setForSaleArtToken(uint256 _artTokenId, uint256 _price) public {
-        address artTokenOwner = mintArtTokenAddress.ownerOf(_artTokenId);
+    // function setForSaleArtToken(uint256 _artTokenId, uint256 _price) public {
+    //     address artTokenOwner = mintArtTokenAddress.ownerOf(_artTokenId);
 
-        require(artTokenOwner == msg.sender, "not owner");
-        require(_price > 0, "lower price");
-        require(artTokenPrices[_artTokenId] == 0, "already on sale");
-        require(
-            mintArtTokenAddress.isApprovedForAll(artTokenOwner, address(this)),
-            "Art token owner did not approve token"
-        );
+    //     require(artTokenOwner == msg.sender, "not owner");
+    //     require(_price > 0, "lower price");
+    //     require(artTokenPrices[_artTokenId] == 0, "already on sale");
+    //     require(
+    //         mintArtTokenAddress.isApprovedForAll(artTokenOwner, address(this)),
+    //         "Art token owner did not approve token"
+    //     );
 
-        artTokenPrices[_artTokenId] = _price;
+    //     artTokenPrices[_artTokenId] = _price;
 
-        onSaleArtTokenArray.push(_artTokenId);
-    }
+    //     onSaleArtTokenArray.push(_artTokenId);
+    // }
 
-    function purchaseArtToken(uint256 _artTokenId) public payable {
+    function purchaseArtToken(uint256 _artTokenId)
+        public
+        payable
+        returns (uint256)
+    {
         uint256 price = artTokenPrices[_artTokenId];
         address artTokenOwner = mintArtTokenAddress.ownerOf(_artTokenId);
 
@@ -55,9 +57,6 @@ contract SaleArtToken {
                 onSaleArtTokenArray.pop();
             }
         }
-    }
-
-    function getonSaleArtTokenArrayLength() public view returns (uint256) {
-        return onSaleArtTokenArray.length;
+        return 200;
     }
 }
