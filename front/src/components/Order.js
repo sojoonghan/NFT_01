@@ -17,7 +17,7 @@ const Order = () => {
     const PRICE = useRecoilValue(price);
     const ID = useRecoilValue(newID);
 
-    const goHome = useNavigate(null);
+    const goHome = useNavigate();
 
     const NftInfo = {
         account: ACCOUNT,
@@ -32,7 +32,7 @@ const Order = () => {
         axios.post('http://localhost:3001/order', NftInfo).then((res) => {
             if (res.status === 200) {
                 alert("구매성공")
-                gohome();
+                tohome();
             }
 
         }).catch((err) => {
@@ -40,27 +40,26 @@ const Order = () => {
             alert("구매실패")
         })
     }
-    const gohome = () => {
+
+    const tohome = () => {
         goHome('/home')
     }
     return (
         <>
-            <section >
-                <div className='div'>
-                </div>
-                <div className='container'>
+            <div className='container'>
+                <div>
                     <img src={IMG} alt={'order'} className='item' />
-                    <div className='item-price'>
-                        <p>제목:{TITLE}</p>
-                        <p>작가:{NAME}</p>
-                        <p>설명:{DESCRIPT}</p>
-                        <p >가격: {PRICE} ETH</p>
-                    </div>
                 </div>
-            </section>
-            <section>
+                <div className='item-price'>
+                    <p>제목:{TITLE}</p>
+                    <p>작가:{NAME}</p>
+                    <p>설명:{DESCRIPT}</p>
+                    <p >가격: {PRICE} ETH</p>
+                </div>
+            </div>
+            <div>
                 <ul>
-                    <li className='oder-li'>
+                    <li className='oder-li-1'>
                         판매자 지갑주소 : {ACCOUNT}
                     </li>
                     <li className='oder-li-1'>
@@ -77,9 +76,9 @@ const Order = () => {
                     </li>
                 </ul>
                 <div>
-                    <button onClick={onOder} className='minting2-btn'>구매</button>
+                    <button onClick={onOder} className='oder-btn'>구매</button>
                 </div>
-            </section>
+            </div>
         </>
     )
 }
