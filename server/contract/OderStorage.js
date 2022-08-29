@@ -1,5 +1,5 @@
 
-const adress = "  0xeec17886cc1fF90D283A8a7B7681c3B38699dE05"
+const address = "0xeec17886cc1fF90D283A8a7B7681c3B38699dE05"
 const abi = [
     {
         "inputs": [
@@ -108,4 +108,4 @@ const abi = [
         "type": "function"
     }
 ]
-module.exports = { adress, abi }
+module.exports = { address, abi }

@@ -1,9 +1,11 @@
 const Web3 = require('web3');
 // const solc = require('solc');
 // const fs = require('fs');
-const contract = require('../../contract/MintStorage');
+const contract = require('../../contract/build/contracts/MintNFT.json');
 const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
-const sc = new web3.eth.Contract(contract.abi, contract.adress);
+const CA = "0x1E814a0b323f137C4D9bB87466F178e118400c2A"
+const ABI = contract.abi;
+const sc = new web3.eth.Contract(ABI, CA);
 const bytecode = contract.bytecode;
 
 const nftGet = () => {
@@ -19,7 +21,7 @@ const nftPost = async (req, res) => {
     console.log(Account);
     console.log(Price);
 
-    const newItemId = await sc.methods.mintNFT(Account, tokenURI).send();
+    const newItemId = await sc.methods.mintNFT(Account, tokenURI).encodeABI();
 
     console.log(newItemId);
 

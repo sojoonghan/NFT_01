@@ -1,11 +1,13 @@
 const Web3 = require('web3');
-const contract = require('../../contract/OderStorage');
+const contract = require('../../contract/build/contracts/SaleArtToken.json');
+const CA = "0xeec17886cc1fF90D283A8a7B7681c3B38699dE05"
+const ABI = contract.abi;
 const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
-const SC = new web3.eth.Contract(contract.abi);
+const SC = new web3.eth.Contract(CA, ABI);
 
 const orderGet = () => {
-
 }
+
 const orderPost = async (req, res) => {
     console.log(req.body);
     const Account = req.body.account;
@@ -17,7 +19,5 @@ const orderPost = async (req, res) => {
     if (oder === 200) {
         res.status(200).json();
     }
-
-
 }
 module.exports = { orderGet, orderPost }
