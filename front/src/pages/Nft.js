@@ -31,10 +31,10 @@ const Nft = () => {
     const onNft = (event) => {
         axios.post('http://localhost:3001/nft', accURI).then((res) => {
             if (res.status === 200) {
-                const newId = res.data.id;
-                console.log(newId)
-                alert(`민팅 성공 NFT IDcode: ${newId}`)
-                scID(newId);
+                const tokenID = res.data.tokenid;
+                console.log(tokenID)
+                alert(`민팅 성공 : NFT tokenID: ${tokenID}`)
+                scID(tokenID);
                 goHome();
             }
         })

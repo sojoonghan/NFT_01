@@ -4,10 +4,23 @@
   align-items: center;
   justify-content: center;
 }
-.oder-li-1 {
-  border-style: solid;
-  border-width: 30px;
+.container-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.oder-li-1 {
+  list-style: none;
+  padding: 50px 50px;
+  font-size: 40px;
+}
+.oder-li-2 {
+  list-style: none;
+  padding: 30px 30px;
+  font-size: 20px;
+}
+
 .item {
   border-style: solid;
   border-width: 30px;

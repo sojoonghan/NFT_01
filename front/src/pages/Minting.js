@@ -25,7 +25,6 @@ const Minting = () => {
     const TITLE = useSetRecoilState(title);
     const DESCRIPT = useSetRecoilState(descript);
 
-
     const titleHandler = (event) => {
         setTitle(event.currentTarget.value);
         TITLE(event.currentTarget.value)

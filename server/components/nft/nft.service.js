@@ -13,6 +13,7 @@ const nftGet = () => {
 
 const nftPost = async (req, res) => {
     console.log(req.body);
+    console.log(ABI);
 
     const tokenURI = req.body.tokenuri;
     const Account = req.body.account;
@@ -21,13 +22,15 @@ const nftPost = async (req, res) => {
     console.log(Account);
     console.log(Price);
 
-    const newItemId = await sc.methods.mintNFT(Account, tokenURI).encodeABI();
+    let newItemId = await sc.methods.mintNFT(Account, tokenURI).encodeABI();
+    // let result = await signTX(newItemId);
 
+    console.log(ABI);
     console.log(newItemId);
 
 
     if (newItemId) {
-        res.status(200).json({ id: newItemId });
+        res.status(200).json({ tokenid: newItemId });
     } else {
         res.status(400).json({ message: "실행 오류" })
     }

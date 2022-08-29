@@ -54,7 +54,7 @@ const Order = () => {
                     <p>설명:{DESCRIPT}</p>
                     <p >가격: {PRICE} ETH</p>
                 </div>
-                <ul>
+                <ul className='container-ul'>
                     <li className='oder-li-1'>
                         판매자 지갑주소 : {ACCOUNT}
                     </li>
@@ -67,8 +67,8 @@ const Order = () => {
                     <li className='oder-li-1'>
                         tokenURI: {TOKENURI}
                     </li>
-                    <li className='oder-li-1'>
-                        newid: {ID}
+                    <li className='oder-li-2'>
+                        tokenID : {ID}
                     </li>
                 </ul>
                 <button onClick={onOder} className='oder-btn'>구매</button>
