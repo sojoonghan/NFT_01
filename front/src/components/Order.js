@@ -17,7 +17,10 @@ const Order = () => {
     const PRICE = useRecoilValue(price);
     const ID = useRecoilValue(newID);
 
-    const goHome = useNavigate();
+    const navigateHome = useNavigate();
+    const tohome = () => {
+        navigateHome('/home');
+    }
 
     const NftInfo = {
         account: ACCOUNT,
@@ -41,23 +44,16 @@ const Order = () => {
         })
     }
 
-    const tohome = () => {
-        goHome('/home')
-    }
     return (
         <>
-            <div className='container'>
-                <div>
-                    <img src={IMG} alt={'order'} className='item' />
-                </div>
+            <section className='container'>
+                <img src={IMG} alt={'order'} className='item' />
                 <div className='item-price'>
                     <p>제목:{TITLE}</p>
                     <p>작가:{NAME}</p>
                     <p>설명:{DESCRIPT}</p>
                     <p >가격: {PRICE} ETH</p>
                 </div>
-            </div>
-            <div>
                 <ul>
                     <li className='oder-li-1'>
                         판매자 지갑주소 : {ACCOUNT}
@@ -75,10 +71,8 @@ const Order = () => {
                         newid: {ID}
                     </li>
                 </ul>
-                <div>
-                    <button onClick={onOder} className='oder-btn'>구매</button>
-                </div>
-            </div>
+                <button onClick={onOder} className='oder-btn'>구매</button>
+            </section>
         </>
     )
 }

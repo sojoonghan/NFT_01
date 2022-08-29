@@ -31,11 +31,11 @@ const chainid = atom({
 })
 const name = atom({
     key: "name",
-    default: {},
+    default: "",
 })
 const title = atom({
     key: "title",
-    default: {},
+    default: "",
 })
 const descript = atom({
     key: "descript",
@@ -44,11 +44,11 @@ const descript = atom({
 
 const price = atom({
     key: "price",
-    default: {},
+    default: "",
 })
 
 const newID = atom({
     key: "newID",
-    default: {},
+    default: "",
 })
 export { linkChange, minting, nft, img, Account, buyerAccount, chainid, name, title, descript, price, newID }

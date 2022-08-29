@@ -7,16 +7,13 @@
 .oder-li-1 {
   border-style: solid;
   border-width: 30px;
-  border-color: rgb(5, 1, 22);
 }
 .item {
   border-style: solid;
   border-width: 30px;
-  border-color: rgb(5, 1, 22);
 }
 .item-price {
   font-size: 30px;
-  color: rgb(19, 20, 16);
 }
 .oder-btn {
   background-color: rgb(248, 47, 98);
