@@ -16,12 +16,9 @@ contract MintNFT is ERC721URIStorage, Ownable {
     // Counters.Counter를 사용해서 _tokenIds값을 추적한다. NFT가 발행되면 _tokenIds를 1증가시키면서 발행된 NFT에 id를 부여함.
     // Counter는 uint256 값을 갖고, current(), increment(), decrement(), reset() 함수를 이용해서 값을 다룸.
     Counters.Counter private _tokenIds;
-    uint256 public nftPrice;
 
     // 생성자로 ERC721을 그대로 호출함, 첫번쨰 인자는 토큰이름, 두번째 인자는 심볼
-    constructor() ERC721("ArtNFT", "ART") {
-        nftPrice = 10e18;
-    }
+    constructor() ERC721("ArtNFT", "ART") {}
 
     // NFT 발행 함수, NFT json(이름, 설명, 이미지URI, 속성 등등) 을 담고 있는 tokenURI를 파라미터로 전달.
     function mintNFT(address to, string memory tokenURI)

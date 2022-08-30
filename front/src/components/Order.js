@@ -67,7 +67,7 @@ const Order = () => {
                     <li className='oder-li-1'>
                         tokenURI: {TOKENURI}
                     </li>
-                    <li className='oder-li-2'>
+                    <li className='oder-li-1'>
                         tokenID : {ID}
                     </li>
                 </ul>

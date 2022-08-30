@@ -1,6 +1,6 @@
 const Web3 = require('web3');
 const Contract = require('../../contract/build/contracts/SaleArtToken.json');
-const CA = "0xeec17886cc1fF90D283A8a7B7681c3B38699dE05"
+const CA = "0xF8d64dA25B9dB96Ff5EC3aB6C7b14Dd52fD88674"
 const ABI = Contract.abi;
 const bytecode = Contract.bytecode;
 const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
@@ -16,7 +16,7 @@ const orderPost = async (req, res) => {
     const Price = req.body.price;
     const ID = req.body.id;
 
-    const oder = SC.methods.purchaseArtToken(ID).send();
+    const oder = await SC.methods.purchaseArtToken(ID).call();
     if (oder === 200) {
         res.status(200).json();
     }
